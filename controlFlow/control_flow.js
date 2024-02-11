@@ -51,3 +51,25 @@ let isAuthentificated = true;
 let authentificationStatus = isAuthentificated ? "Authentificated" : "Not Authentificated";
 
 console.log(authentificationStatus);
+
+let organization_role = "Employee";
+let authorization;
+let one_on_one_interaction = false;
+
+switch (organization_role) {
+    case "Employee":
+        authorization = "Dietary Services";
+        break;
+    case "Enrolled Member":
+        authorization = "Dietary Services";
+        one_on_one_interaction = true;
+        break;
+    case "Subscriber":
+        authorization = "Partial access only!";
+        break;
+    default:
+        authorization = "Entroll or at least subscribe first to avail this facility";
+        
+}
+
+console.log(organization_role, " : ", authorization, " . ", one_on_one_interaction)
