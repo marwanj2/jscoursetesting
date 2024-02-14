@@ -1,9 +1,9 @@
 const employees = [
-    { id:1, name: 'John Doe', age:30, departement: 'IT', salary: 50000 },
-    { id:2, name: 'Marwen Jridi', age:24, departement: 'IT', salary: 100000 },
-    { id:3, name: 'Nizar Nak', age:24, departement: 'Energy', salary: 70000 },
-    { id:4, name: 'Rami Ham', age:24, departement: 'Electric', salary: 60000 },
-    { id:5, name: 'Bob Johnson', age:35, departement: 'HR', salary: 60000 },
+    { id:1, name: 'John Doe', age:30, departement: 'IT', salary: 50000, specialization: 'javascript' },
+    { id:2, name: 'Marwen Jridi', age:24, departement: 'IT', salary: 100000, specialization: 'python' },
+    { id:3, name: 'Nizar Nak', age:24, departement: 'Energy', salary: 70000, specialization: 'javascript' },
+    { id:4, name: 'Rami Ham', age:24, departement: 'Electric', salary: 60000, specialization: 'java' },
+    { id:5, name: 'Bob Johnson', age:35, departement: 'HR', salary: 60000, specialization: 'python' },
 ];
 
 function displayEmployees() {
@@ -30,4 +30,10 @@ function findEmployeeById(employeeId) {
     } else {
         alert('No Employee with ID ',employeeId,' is found!!');
     }
+};
+
+function findBySpecialization(specializationTyped) {
+    const filteredbyspecializations = employees.filter(employee => employee.specialization === specializationTyped);
+    const fbsDisplay = filteredbyspecializations.map((employee,index) => `<p>${employee.id}: ${employee.name} - ${employee.age}: ${employee.departement}: ${employee.specialization}</p>`);
+    document.getElementById('employeesDetails').innerHTML = fbsDisplay;
 }
